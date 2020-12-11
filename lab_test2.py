@@ -15,7 +15,7 @@ class Document:
         self.cursor = 0
         self.filename = file_name
 
-    def replace(self, character):
+    def insert(self, character):
         """
         Method inserts a character at the current
         cursor position.
@@ -38,12 +38,12 @@ class Document:
         Arguments: none
         Returns: none
         """
+        del self.characters[self.cursor]
         try:
-            doc.backward(3)
+            doc.backward()
             doc.delete()
         except:
-            print("error")
-        del self.characters[self.cursor]
+            print("Error has occured")
 
 
     def save(self):
@@ -86,14 +86,13 @@ class Document:
         """
         self.cursor -= steps
 
-
 # initialising an object and using the class
 doc = Document("lab_t2.txt")
 characters = 'fake mews'
 
 for letter in characters:
-    doc.replace(letter)
+    doc.insert(letter)
 
-doc.backward(3)
-doc.replace('n')
+doc.backward(1)
+doc.insert('n')
 doc.save()
