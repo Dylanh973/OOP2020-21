@@ -1,7 +1,7 @@
 # Object Oriented Programming
-# TU856 & TU858
+# TU856
 # Semester 1, 2020-21
-# B. Schoen-Phelan
+# Dylan Heathcote C19434966
 # 11-12-2020
 
 class Document:
