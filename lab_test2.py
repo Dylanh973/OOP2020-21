@@ -30,14 +30,21 @@ class Document:
         self.characters.insert(self.cursor, character)
         self.cursor += 1
 
-    #def delete(self):
+
+    def delete(self):
         """
         Method deletes a character from the current
         cursor position.
         Arguments: none
         Returns: none
         """
-        #del self.characters[self.cursor]
+        try:
+            doc.backward(3)
+            doc.delete()
+        except:
+            print("error")
+        del self.characters[self.cursor]
+
 
     def save(self):
         """
@@ -87,6 +94,6 @@ characters = 'fake mews'
 for letter in characters:
     doc.replace(letter)
 
-doc.backward(44)
+doc.backward(3)
 doc.replace('n')
 doc.save()
